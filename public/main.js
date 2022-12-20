@@ -23,7 +23,7 @@ const subscription= async()=> {
                 userVisibleOnly:true,
                 applicationServerKey:PUBLIC_VAPID_KEY
             })
-
+              console.log(subcription)
        await fetch('https://notificacionespushnodejs-production.up.railway.app/subscription',
         {
             method:'POST',
