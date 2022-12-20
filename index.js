@@ -26,5 +26,5 @@ app.use(index)
 //static content
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(3000); 
+app.listen(process.env.PORT); 
 console.log('Server listening');
