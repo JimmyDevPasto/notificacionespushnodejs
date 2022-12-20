@@ -24,7 +24,7 @@ const subscription= async()=> {
                 applicationServerKey:PUBLIC_VAPID_KEY
             })
 
-       await fetch('http://localhost:3000/subscription',
+       await fetch('https://notificacionespushnodejs-production.up.railway.app/subscription',
         {
             method:'POST',
             body:JSON.stringify(subcription),            
@@ -42,7 +42,7 @@ const subscription= async()=> {
   form.addEventListener('submit', e=>{
 
     e.preventDefault(); 
-    fetch('/new-message',{
+    fetch('https://notificacionespushnodejs-production.up.railway.app/new-message',{
       method: 'POST',
       body:JSON.stringify({
         message:message.value
