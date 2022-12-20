@@ -22,18 +22,27 @@ webpush.setVapidDetails(
   router.post('/subscription', async (req, res)=>{
     pushSubscription= req.body;
     res.status(200).json();
-    const Payload= JSON.stringify({ 
-            title: 'My cosutasfa',
-            message: 'jelow'
-    });
-
-    try {
-        await webpush.sendNotification(pushSubscription, Payload);
-    } catch (error) {
-        console.log(error);   
-    }
-     
   }); 
+    
+
+    router.post('/new-message', async (req, res)=>{
+      const {message}= req.body; 
+
+      const Payload= JSON.stringify({ 
+        title: 'hoy tienes recoleccion',
+        message
+    });
+       try {
+        await webpush.sendNotification(pushSubscription, Payload);
+      } catch (error) {
+        console.log(error);   
+      }
+      
+    })
+
+    
+     
+
 
 
 export default router;
