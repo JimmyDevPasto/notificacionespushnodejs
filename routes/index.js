@@ -22,16 +22,7 @@ webpush.setVapidDetails(
   router.post('/subscription', async (req, res)=>{
     pushSubscription= req.body;
     console.log(pushSubscription);
-    res.status(200).json();
-    const Payload= JSON.stringify({ 
-      title: 'hoy tienes recoleccion',
-      message
-  });
-     try {
-      await webpush.sendNotification(pushSubscription, Payload);
-    } catch (error) {
-      console.log(error);   
-    }
+    res.status(200).json();    
   }); 
     
 
