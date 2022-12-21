@@ -25,13 +25,17 @@ webpush.setVapidDetails(
     res.status(200).json();    
   }); 
     
-
+  const fecha = new Date();
     router.post('/new-message', async (req, res)=>{
       const {message}= req.body; 
 
       const Payload= JSON.stringify({ 
         title: 'hoy tienes recoleccion',
-        message
+        message,
+        click_action: 'https://notificacionespushnodejs-production.up.railway.app/',
+        requireInteraction: true,
+        timestamp:fecha,
+    vibrate: [200, 100, 200]
     });
        try {
         await webpush.sendNotification(pushSubscription, Payload);

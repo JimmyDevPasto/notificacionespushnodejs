@@ -32,7 +32,7 @@ const subscription= async()=> {
   console.log(message.value);
   
   form.addEventListener('submit', e=>{
-
+    
     e.preventDefault(); 
     fetch('https://notificacionespushnodejs-production.up.railway.app/new-message',{
       method: 'POST',
