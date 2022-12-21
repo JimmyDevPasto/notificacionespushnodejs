@@ -12,32 +12,35 @@ self.addEventListener('push', e=>{
   //   badge:'https://cdn-icons-png.flaticon.com/512/4381/4381609.png',
   // }
 
-  actions: [
-    {
-      action: 'coffee-action',
-      type: 'button',
-      title: 'Coffee',
-      icon: 'https://cdn-icons-png.flaticon.com/512/590/590749.png',
-    },
-    {
-      action: 'doughnut-action',
-      type: 'button',
-      title: 'Doughnut',
-      icon: 'https://cdn-icons-png.flaticon.com/512/1921/1921225.png',
-    },
-    {
-      action: 'gramophone-action',
-      type: 'button',
-      title: 'Gramophone',
-      icon: 'https://cdn-icons-png.flaticon.com/512/4313/4313307.png',
-    },
-    {
-      action: 'atom-action',
-      type: 'button',
-      title: 'Atom',
-      icon: 'https://cdn-icons-png.flaticon.com/512/2497/2497631.png',
-    },
-  ],
+  const options= {
+    actions: [
+      {
+        action: 'coffee-action',
+        type: 'button',
+        title: 'Coffee',
+        icon: 'https://cdn-icons-png.flaticon.com/512/590/590749.png',
+      },
+      {
+        action: 'doughnut-action',
+        type: 'button',
+        title: 'Doughnut',
+        icon: 'https://cdn-icons-png.flaticon.com/512/1921/1921225.png',
+      },
+      {
+        action: 'gramophone-action',
+        type: 'button',
+        title: 'Gramophone',
+        icon: 'https://cdn-icons-png.flaticon.com/512/4313/4313307.png',
+      },
+      {
+        action: 'atom-action',
+        type: 'button',
+        title: 'Atom',
+        icon: 'https://cdn-icons-png.flaticon.com/512/2497/2497631.png',
+      },
+    ],
+  }
+  
 
   self.registration.showNotification(title, options);  
 })
