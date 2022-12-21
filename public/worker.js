@@ -1,6 +1,6 @@
 console.log('serviceworkerd');
 const fecha = new Date();
-self.addEventListener('push', e=>{
+self.addEventListener('click', e=>{
   const data = e.data.json()
   console.log(data);
   self.registration.showNotification(data.title, {
