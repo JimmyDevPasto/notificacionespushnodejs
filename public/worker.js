@@ -13,32 +13,23 @@ self.addEventListener('push', e=>{
   // }
 
   const options= {
+    body: data.message,
+    icon: 'src/public/img/donas.png',
+    badge: 'https://cdn-icons-png.flaticon.com/512/4381/4381609.png',
+
     actions: [
       {
-        action: 'coffee-action',
+        action: 'yes',
         type: 'button',
-        title: 'Coffee',
-        icon: "src/public/img/coffee.png",
-        
+        title: '👍 Yes',
       },
       {
-        action: 'doughnut-action',
-        type: 'button',
-        title: 'Doughnut',
-        icon: 'https://cdn-icons-png.flaticon.com/512/1921/1921225.png',
+        action: 'no',
+        type: 'text',
+        title: '👎 No (explain why)',
+        placeholder: 'Type your explanation here',
       },
-      {
-        action: 'gramophone-action',
-        type: 'button',
-        title: 'Gramophone',
-        icon: 'https://cdn-icons-png.flaticon.com/512/4313/4313307.png',
-      },
-      {
-        action: 'atom-action',
-        type: 'button',
-        title: 'Atom',
-        icon: 'https://cdn-icons-png.flaticon.com/512/2497/2497631.png',
-      },
+    
     ],
   }
   
