@@ -21,13 +21,13 @@ self.addEventListener('push', e=>{
       {
         action: 'yes',
         type: 'button',
-        title: '👍 Yes',
+        title: '👍 ir',
       },
       {
         action: 'no',
         type: 'text',
-        title: '👎 No (explain why)',
-        placeholder: 'Type your explanation here',
+        title: 'x cerrar',
+        
       },
     
     ],
@@ -46,7 +46,27 @@ self.addEventListener('push', e=>{
 
 self.addEventListener('notificationclick', event => {
   console.log('Se ha hecho clic en la notificación');
-  const examplePage = 'https://www.facebook.com/reciclasolidario';
-  const promiseChain = clients.openWindow(examplePage);
-  event.waitUntil(promiseChain);
+  
+
+  if (!event.action) {
+    // Was a normal notification click
+    console.log('Notification Click.');
+    return;
+  }
+
+  switch (event.action) {
+    case 'yes':
+      const examplePage = 'https://www.facebook.com/reciclasolidario';
+      const promiseChain = clients.openWindow(examplePage);
+      event.waitUntil(promiseChain);
+      break;
+    case 'no':
+      const clickedNotification = event.notification;
+      clickedNotification.close();
+      break;
+    
+    default:
+      console.log(`Unknown action clicked: '${event.action}'`);
+      break;
+  }
 });
