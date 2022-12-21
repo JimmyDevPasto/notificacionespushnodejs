@@ -31,6 +31,13 @@ self.addEventListener('push', e=>{
       },
     
     ],
+    sound:'src/public/img/reciclaje.mp3',
+    tag: 'data-notification',
+  data: {
+    time: new Date(Date.now()).toString(),
+    message: 'Hello, World!',
+  },
+
   }
   
 
@@ -39,4 +46,7 @@ self.addEventListener('push', e=>{
 
 self.addEventListener('notificationclick', event => {
   console.log('Se ha hecho clic en la notificación');
+  const examplePage = 'https://www.facebook.com/reciclasolidario';
+  const promiseChain = clients.openWindow(examplePage);
+  event.waitUntil(promiseChain);
 });
