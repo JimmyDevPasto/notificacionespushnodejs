@@ -18,7 +18,8 @@ self.addEventListener('push', e=>{
         action: 'coffee-action',
         type: 'button',
         title: 'Coffee',
-        icon: 'https://cdn-icons-png.flaticon.com/512/590/590749.png',
+        icon: "src/public/img/coffee.png",
+        
       },
       {
         action: 'doughnut-action',
