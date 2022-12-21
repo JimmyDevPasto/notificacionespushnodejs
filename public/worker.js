@@ -7,6 +7,7 @@ self.addEventListener('push', e=>{
     body: data.message,
     icon:'https://cdn-icons-png.flaticon.com/512/4381/4381583.png',
     badge:'https://cdn-icons-png.flaticon.com/512/4381/4381609.png',
-    click_action: 'https://www.flaticon.es/icono-gratis/reciclar_4381609'
+    click_action: 'https://notificacionespushnodejs-production.up.railway.app/'
   })
 })
+self.addEventListener('nofi')
